@@ -2,82 +2,40 @@ import Head from 'next/head';
 import { connectToDatabase } from '../util/mongodb';
 import { Button, Grid, Box } from '@material-ui/core';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import Footer from '../components/Footer/Footer';
+import CardBox from '../components/CardBox';
 
-export default function Home({ isConnected }) {
+const pageTitle = "Idea Droper";
+
+export default function Index({ isConnected }) {
   return (
     <div className='container'>
-      <Head>
-        <title>Idea Droper</title>
+      {/* <Head>
+        <title>{pageTitle}</title>
         <link rel='icon' href='/favicon.ico' />
-      </Head>
-
-      <main>
-        <h1 className='title'>Welcome to Idea Dropper</h1>
-
-        {isConnected ? null : (
-          <h2 className='subtitle'>
-            You are NOT connected to MongoDB. Check the <code>README.md</code>{' '}
-            for instructions.
-          </h2>
-        )}
-
-        <Box>
-          <AddCircleOutlineIcon />
+      </Head> */}
+        <Box height={'90vh'}>
+          <h1 className='title'>{pageTitle}</h1>
+          {isConnected ? null : (
+            <h2 className='subtitle'>
+              You are NOT connected to MongoDB. Check the <code>README.md</code>{' '}
+              for instructions.
+            </h2>
+          )}
+          
+          <CardBox/>
+          <Box display="flex" justifyContent="center">
+            <AddCircleOutlineIcon />
+          </Box>
         </Box>
-      </main>
-
-      <footer>
-        <a
-          href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Powered by{' '}
-          <img src='/vercel.svg' alt='Vercel Logo' className='logo' />
-        </a>
-      </footer>
+      <Footer/>
 
       <style jsx>{`
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
           justify-content: center;
           align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
         }
 
         .title a {
