@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { Box, Menu, MenuItem } from '@material-ui/core';
 
-export default function CardBox() {
+export default function CardBox(props) {
   const [anchorEl, setAnchorEl] = useState(null);
+  const {boxId} = props;
+  const isEmpty = "";
 
   const handleClick = (event) => {
     //open a menu
@@ -15,14 +17,17 @@ export default function CardBox() {
     setAnchorEl(null);
   };
 
-  const handleDraw = () => {};
+  const handleDraw = () => {
+    //retrieve a card
+    //display the card
+  };
   const handleShake = () => {};
   const handleDelete = () => {
     //confirm before proceed
   };
 
   return (
-    <Box>
+    <div>
       <Image
         src={'/box.svg'}
         alt='Box'
@@ -41,6 +46,6 @@ export default function CardBox() {
         <MenuItem onClick={handleShake}>Shake</MenuItem>
         <MenuItem onClick={handleDelete}>Delete</MenuItem>
       </Menu>
-    </Box>
+    </div>
   );
 }

@@ -11,15 +11,21 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.3",
     "@reduxjs/toolkit": "^1.5.0",
+    "axios": "^0.21.1",
     "mongodb": "^3.5.9",
     "next": "^10.0.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-redux": "^7.2.2"
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "sass": "^1.32.8",
+    "tailwindcss": "^2.0.4"
   },
   "license": "MIT",
   "devDependencies": {
     "@testing-library/react": "^11.2.5",
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.8",
     "webpack": "^5.0.0-rc.6"
   }
 }

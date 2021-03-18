@@ -1,10 +1,19 @@
-![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/sample-logo.png)
+![Logo of the project](./public/favicon-256.png)
 
 # Idea Dropper
-> Additional information or tagline
+> Write your ideas, drop it in the box, then forget about them.
+>
+> One day, let it pop out and inspire you
 
-A brief description of your project, what it is used for and how does life get
-awesome when someone starts to use it.
+There are a lot of tools can help you to memorise, organise, or search content.
+
+Idea Dropper has nothing to do with all of these.
+
+It's just a small tool to bring your memory back.
+
+If you have something important, don't store it in this app.
+
+Just have fun.
 
 ## Installing / Getting started
 
@@ -64,10 +73,21 @@ And again you'd need to tell what the previous code actually does.
 
 ## Features
 
+Everything is in the boxes and cards.
+
+What you can do to your boxes?
+
+- Draw a card
+- Put a new card
+
 What's all the bells and whistles this project can perform?
+
 * What's the main functionality
 * You can also do another thing
-* If you get really randy, you can even do this
+
+### Future plan
+
+- Share your cards, boxes
 
 ## Configuration
 

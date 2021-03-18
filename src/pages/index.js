@@ -1,43 +1,32 @@
-import Head from 'next/head';
-import { connectToDatabase } from '../util/mongodb';
-import { Button, Grid, Box } from '@material-ui/core';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+// import Head from 'next/head';
+import { Button, Grid, Container, Box, Typography } from '@material-ui/core';
 import Footer from '../components/Footer/Footer';
-import CardBox from '../components/CardBox';
+import Link from 'next/link';
+import { APPNAME } from '../CONSTANTS';
+import palette from '../styles/palette';
 
-const pageTitle = "Idea Droper";
-
-export default function Index({ isConnected }) {
+export default function Index() {
   return (
-    <div className='container'>
-      {/* <Head>
-        <title>{pageTitle}</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head> */}
-        <Box height={'90vh'}>
-          <h1 className='title'>{pageTitle}</h1>
-          {isConnected ? null : (
-            <h2 className='subtitle'>
-              You are NOT connected to MongoDB. Check the <code>README.md</code>{' '}
-              for instructions.
-            </h2>
-          )}
-          
-          <CardBox/>
-          <Box display="flex" justifyContent="center">
-            <AddCircleOutlineIcon />
-          </Box>
-        </Box>
-      <Footer/>
+    <div className='flex flex-col min-h-screen justify-center items-center'>
+      <nav className='w-full flex p-4' style={{backgroundColor: palette.primary}}>
+        <i className='fas fa-bars flex-initial text-2xl'></i>
+        <p className='flex-auto text-center text-2xl' >HOME</p>
+        <i className="fas fa-ellipsis-h flex-initial text-2xl"></i>
+      </nav>
+      <aside></aside>
+      <main className='flex-1'>
+        <h1 className='title'>{APPNAME}</h1>
+        <div className=''>
+          <Typography>Drop your ideas in the box</Typography>
+          <Typography>Draw your ideas for inspiration </Typography>
+        </div>
+        <Link href='/user/ludwig'>
+          <a>Ludwig</a>
+        </Link>
+      </main>
+      <Footer />
 
       <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          justify-content: center;
-          align-items: center;
-        }
-
         .title a {
           color: #0070f3;
           text-decoration: none;
@@ -129,31 +118,6 @@ export default function Index({ isConnected }) {
           }
         }
       `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
     </div>
   );
-}
-
-export async function getServerSideProps(context) {
-  const { client } = await connectToDatabase();
-
-  const isConnected = await client.isConnected();
-
-  return {
-    props: { isConnected },
-  };
 }

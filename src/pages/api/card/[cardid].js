@@ -1,5 +1,6 @@
-import { connectToDatabase } from "../../util/mongodb";
+import { connectToDatabase } from "../../../util/mongodb";
 
+//request a card by its id
 export default async (req, res) => {
   const { db } = await connectToDatabase();
   const card = await db

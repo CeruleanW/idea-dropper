@@ -13,6 +13,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script src="https://kit.fontawesome.com/2a67938cb9.js" crossOrigin="anonymous"></script>
         </body>
       </Html>
     );
