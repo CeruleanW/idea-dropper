@@ -1,5 +1,6 @@
 import { connectToDatabase } from '../../../util/mongodb';
 const ObjectID = require('mongodb').ObjectID;
+//TODO: destruct request body to get data from client
 
 //add a card to a box
 export default async (req, res) => {

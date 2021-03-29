@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import BoxSvg from './box.svg';
 import Image from 'next/image';
-import { Box, Menu, MenuItem } from '@material-ui/core';
+import { Menu, MenuItem } from '@material-ui/core';
 
 export default function CardBox(props) {
   const [anchorEl, setAnchorEl] = useState(null);
