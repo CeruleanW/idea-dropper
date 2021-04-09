@@ -11,7 +11,7 @@ const Input = styled.input`
   margin-left: 1rem;
 `;
 
-export default function LoginPage() {
+export default function SignUpPage() {
   const { register, handleSubmit, watch, errors } = useForm();
   const router = useRouter();
   const [session, loading] = useSession();
