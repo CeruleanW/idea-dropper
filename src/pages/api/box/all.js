@@ -1,7 +1,7 @@
 import { connectToDatabase } from "../../../util/mongodb";
 
 export default async (req, res) => {
-  console.log("Calling API");
+  console.log("Retrieving all the boxes from box API");
   // // authentication - if fails, redirect to login page
   // const myUsername = getUsername(req.cookies);
   // const myPassword = getPassword(req.cookies);

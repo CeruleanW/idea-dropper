@@ -1,5 +1,6 @@
 import React from 'react';
 import CardBox from '../../components/CardBox';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import { connectToDatabase } from '../../util/mongodb';
 import Head from 'next/head';
 import { APPNAME } from '../../CONSTANTS';
@@ -11,13 +12,14 @@ export async function getServerSideProps(context) {
   const isConnected = await client.isConnected();
 
   //fetch data of a user
-  const boxes = null;
+  const boxes = {};
 
   return {
     props: { isConnected, boxes },
   };
 }
 
+//Home page for a user after logged-in
 export default function UserHome(props) {
   const { isConnected, boxes } = props;
 
@@ -31,26 +33,17 @@ export default function UserHome(props) {
           key='meta-title'
         />
       </Head>
-      <header>
-        <h1>User: somename</h1>
-        {isConnected ? null : (
-          <h2 className='subtitle'>
-            You are NOT connected to MongoDB. Check the <code>README.md</code>{' '}
-            for instructions.
-          </h2>
-        )}
-      </header>
+      <h1>User: somename</h1>
+      {isConnected ? null : (
+        <h2 className='subtitle'>
+          You are NOT connected to MongoDB. Check the <code>README.md</code> for
+          instructions.
+        </h2>
+      )}
       <CardBox />
 
       <div className='flex justify-center'>
-        {boxes.map((box, index) => (
-          <CardBox key={`box-${index}`} data={box} />
-        ))}
-        <Tabs>
-          <BoxTab/>
-          <AddCardTab/>
-          <BoardTab/>
-        </Tabs>
+          <AddCircleOutlineIcon />
       </div>
     </div>
   );

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-// import BoxSvg from './box.svg';
-import Image from 'next/image';
+import BoxSvg from '../../public/box.svg';
 import { Menu, MenuItem } from '@material-ui/core';
 
 export default function CardBox(props) {
   const [anchorEl, setAnchorEl] = useState(null);
-  const {boxId} = props;
-  const isEmpty = "";
+  const { data } = props;
+  const isEmpty = '';
 
   const handleClick = (event) => {
     //open a menu
@@ -28,13 +27,9 @@ export default function CardBox(props) {
 
   return (
     <div>
-      <Image
-        src={'/box.svg'}
-        alt='Box'
-        width={250}
-        height={250}
-        onClick={handleClick}
-      />
+      <div className=''>
+        <BoxSvg onClick={handleClick} className='w-48 h-48'/>
+      </div>
       <Menu
         id='simple-menu'
         anchorEl={anchorEl}
