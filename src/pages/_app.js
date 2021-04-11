@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { ThemeProvider } from '@material-ui/core/styles';
-import theme from '../theme';
 import '../styles/normalize.css';
 import '../styles/globals.css';
 import 'semantic-ui-css/semantic.min.css';
@@ -41,13 +39,12 @@ export default function MyApp(props) {
           }
         ></meta>
         <link rel='icon' href='/favicon.ico' />
+        {/* <script src="https://kit.fontawesome.com/2a67938cb9.js" crossorigin="anonymous"></script> */}
       </Head>
       <ReduxProvider store={store}>
-        <ThemeProvider theme={theme}>
           <AuthProvider session={pageProps.session}>
             <Component {...pageProps} />
           </AuthProvider>
-        </ThemeProvider>
       </ReduxProvider>
     </>
   );

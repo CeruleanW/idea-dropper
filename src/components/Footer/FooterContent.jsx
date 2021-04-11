@@ -10,16 +10,19 @@ const useStyles = makeStyles({
   },
 });
 
+const owner = 'Asher Yang';
+const url = 'https://github.com/CeruleanW';
+
 export default function FooterContent() {
   const classes = useStyles();
   return (
       <Box className={classes.footer} justifyContent={"center"}>
         <Typography align='center' >
-          Copyright &copy; 2020 Developed with ❤️ by {' '}
+          Copyright &copy; 2021 Developed with ❤️ by {' '}
           <a className={classes.footerLink}
-            href='https://github.com/CeruleanW'
+            href={url}
           >
-           Yi Yang
+           {owner}
           </a>
         </Typography>
       </Box>

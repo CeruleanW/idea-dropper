@@ -2,51 +2,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { APPNAME } from '../CONSTANTS';
-import palette from '../styles/palette';
-import { Button, Menu, Segment } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 import { useSession, signIn, signOut, signout } from 'next-auth/client';
-import styled from 'styled-components';
 import { FrameWrapper } from '../components/FrameWrapper';
-
-const AutoMarginP = styled.p`
-  margin: auto;
-`;
-
-export function Nav(props) {
-  const { isMenuOpened, setIsMenuOpened, title } = props;
-  return (
-    <nav
-      className='w-full flex p-4'
-      style={{
-        backgroundColor: palette.primary,
-      }}
-    >
-      <i
-        className='fas fa-bars flex-initial text-2xl'
-        id='bar-icon'
-        onClick={() => setIsMenuOpened(!isMenuOpened)}
-      ></i>
-      <AutoMarginP className='flex-auto text-center text-2xl'>{title}</AutoMarginP>
-      <i
-        className='fas fa-ellipsis-h flex-initial text-2xl'
-        id='ellipsis-icon'
-      ></i>
-    </nav>
-  );
-}
-
-export function SideMenu() {
-  return (
-    <aside id='sidebar' className='flex-initial'>
-      <Menu fluid vertical tabular>
-        <Menu.Item id='search' name='search'></Menu.Item>
-        <Menu.Item id='settings' name='settings'></Menu.Item>
-        <Menu.Item id='import' name='import'></Menu.Item>
-        <Menu.Item id='trash' name='trash'></Menu.Item>
-      </Menu>
-    </aside>
-  );
-}
+import Tabs from '../components/Tabs';
+import Tab from '../components/Tab';
 
 export default function Index() {
   const [session, loading] = useSession();
@@ -54,37 +14,33 @@ export default function Index() {
   function handleLogin() {}
 
   return (
-    <FrameWrapper title='Home'>
-      <main className='max-w-full flex-auto flex flex-col justify-center'>
-        <h1 className='title'>{APPNAME}</h1>
-        <div className='mt-10'>
-          <p className='text-center'>Drop your ideas in the box</p>
-          <p className='text-center'>Draw your ideas for inspiration </p>
-        </div>
-        <div className='mt-4 flex justify-center items-center'>
-          {session ? (
-            <>
-              <Link href={`/user/${encodeURIComponent(session.user.email)}`}>
-                <Button>Go to User Page</Button>
-              </Link>
-              <Button onClick={() => signout()}>Logout</Button>
-            </>
-          ) : (
-            <>
-              <Button onClick={() => signIn()}>Login</Button>
-              <Link href='/signup'>
-                <Button>Sign up</Button>
-              </Link>
-            </>
-          )}
-        </div>
-      </main>
-      <Tabs>
-        <BoxTab />
-        <AddTab />
-        <BoardTab />
-      </Tabs>
-
+    <>
+      <FrameWrapper title='Home'>
+        <main className='max-w-full flex-auto flex flex-col justify-center'>
+          <h1 className='title'>{APPNAME}</h1>
+          <div className='mt-10'>
+            <p className='text-center'>Drop your ideas in the box</p>
+            <p className='text-center'>Draw your ideas for inspiration </p>
+          </div>
+          <div className='mt-4 flex justify-center items-center'>
+            {session ? (
+              <>
+                <Link href={`/user/${encodeURIComponent(session.user.email)}`}>
+                  <Button>Go to User Page</Button>
+                </Link>
+                <Button onClick={() => signout()}>Logout</Button>
+              </>
+            ) : (
+              <>
+                <Button onClick={() => signIn()}>Login</Button>
+                <Link href='/signup'>
+                  <Button>Sign up</Button>
+                </Link>
+              </>
+            )}
+          </div>
+        </main>
+      </FrameWrapper>
       <style jsx>{`
         .title a {
           color: #0070f3;
@@ -155,6 +111,6 @@ export default function Index() {
           }
         }
       `}</style>
-    </FrameWrapper>
+    </>
   );
 }
