@@ -19,6 +19,7 @@ export default function DisplayedCard(props) {
   const [isEditing, setIsEditing] = useState(false);
   const [isDialogOpened, setIsDialogOpened] = useState(false);
   
+  const handleClick = () => {}
 
   return (
     <>
@@ -28,7 +29,7 @@ export default function DisplayedCard(props) {
       <CardContent>{data.content}</CardContent>
       {isEditing ? (
         <>
-          <SaveButton onClick={} /> <CancelButton />
+          <SaveButton onClick={handleClick} /> <CancelButton />
         </>
       ) : (
         <CloseButton />

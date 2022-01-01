@@ -2,6 +2,7 @@ import React from "react";
 import FooterContent from "./FooterContent";
 import { AppBar, Box } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
+
 const useStyles = makeStyles((theme) => ({
   footer: {
     bottom: "0",
