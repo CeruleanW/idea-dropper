@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import useSWR from 'swr';
 import { FrameWrapper } from '../components/FrameWrapper';
 import Head from 'next/head';
-import { APPNAME } from '../CONSTANTS';
+import { APPNAME } from '../lib/CONSTANTS';
 import CardBox from '../components/CardBox';
 
 

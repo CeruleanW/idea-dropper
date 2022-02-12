@@ -1,9 +1,9 @@
 import React from 'react';
 import CardBox from '../../components/CardBox';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-import { connectToDatabase } from '../../util/mongodb';
+import { connectToDatabase } from '../../utils/mongodb';
 import Head from 'next/head';
-import { APPNAME } from '../../CONSTANTS';
+import { APPNAME } from '../../lib/CONSTANTS';
 
 // fetch the user data for display
 export async function getServerSideProps(context) {

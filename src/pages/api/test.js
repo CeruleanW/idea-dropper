@@ -1,4 +1,4 @@
-import { connectToDatabase } from '../../util/mongodb';
+import { connectToDatabase } from '../../utils/mongodb';
 
 //add a card to a box
 export default async (req, res) => {

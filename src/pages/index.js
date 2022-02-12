@@ -1,7 +1,7 @@
 // import Head from 'next/head';
 import React from 'react';
 import Link from 'next/link';
-import { APPNAME } from '../CONSTANTS';
+import { APPNAME } from '../lib/CONSTANTS';
 import { Button } from 'semantic-ui-react';
 import { useSession, signIn, signOut, signout } from 'next-auth/client';
 import { FrameWrapper } from '../components/FrameWrapper';

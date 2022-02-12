@@ -4,7 +4,7 @@ import Head from 'next/head';
 import '../styles/normalize.css';
 import '../styles/globals.css';
 import 'semantic-ui-css/semantic.min.css';
-import { APPNAME } from '../CONSTANTS';
+import { APPNAME } from '../lib/CONSTANTS';
 import { Provider as ReduxProvider } from 'react-redux';
 import { useStore } from '../store';
 import { Provider as AuthProvider} from 'next-auth/client'

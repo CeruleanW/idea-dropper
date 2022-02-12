@@ -26,7 +26,7 @@ export default function SignUpPage() {
     <div className={'flex flex-col p-5'}>
       <form method='POST' onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label for='account'>User Account:</label>
+          <label htmlFor='account'>User Account:</label>
           <Input
             name='account'
             type='email'
@@ -35,7 +35,7 @@ export default function SignUpPage() {
           />
         </div>
         <div className='mt-4'>
-          <label for='password'>Password:</label>
+          <label htmlFor='password'>Password:</label>
           <Input
             name='password'
             type='password'

@@ -1,5 +1,5 @@
 const axios = require('axios');
-import { handle } from '../util/helper';
+import { handle } from '../utils';
 
 //Data operations a user can perform on the App
 

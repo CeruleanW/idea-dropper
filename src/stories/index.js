@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Footer from '../components/Footer/Footer';
 import Link from 'next/link';
-import { APPNAME } from '../CONSTANTS';
+import { APPNAME } from '../lib/CONSTANTS';
 import palette from '../styles/palette';
 import { Button, Menu, Segment } from 'semantic-ui-react';
 import { useSession, signIn, signOut, signout } from 'next-auth/client';
